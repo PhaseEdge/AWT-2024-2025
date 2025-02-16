@@ -11,6 +11,7 @@ Deliverables include the source code, test results, and reports detailing implem
 // IMPORTANT NOTE
 core.cpp or powermetrics_output_core === multi threading + caching + better code structure for C++.
 Base output is inside python branch
+Speeds stated in the terminal are wrong. If you need exact runtimes switch to branches such as only_structure, only_caching etc.
 
 ## Testing Instructions
 
