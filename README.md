@@ -27,6 +27,8 @@ Python 3 (Installed and accessible as python3)
 
 Pip (For dependency installation)
 
+JAVA
+
 ## Testing Instructions
 
 To test the implementation, follow these steps:
@@ -60,6 +62,8 @@ For Visual Studio Code:
 
 Press `Ctrl+Shift+P`(Windows) or `Cmd+Shift+P`(Mac) to open the command palette.
 Search for "Python: Select Interpreter" and click on "Enter interpreter path...". And enter .venv path.
+
+Or select /.venv/bin/python path from the options
 
 Close and Reopen Visual Studio Code if necessary
 
