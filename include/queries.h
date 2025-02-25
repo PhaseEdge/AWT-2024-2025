@@ -34,7 +34,7 @@ struct Query
 class Queries{
 private:
     map<QueryID,Query> id_to_query;
-    map<Query,set<QueryID>> query_to_queryIDs;
+    map<Query,set<QueryID> > query_to_queryIDs;
 	set<Query> queries; 
 
 public:
@@ -45,9 +45,16 @@ public:
 
 	set<QueryID>& getIDs(const Query& query);
 
-	Query& getQuery(const QueryID& id);
+    void addIDs(set<QueryID> &queries, const Query &query);
+
+    Query& getQuery(const QueryID& id);
 
 	set<Query>& getAllQuerys();
+
+	unsigned int size();
+
+	Query& getQueryByIndex(const unsigned int index);
+
 };
 
 #endif

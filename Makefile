@@ -1,10 +1,10 @@
 # Build targets (your implementation targets should go in IMPL_O)
 TEST_O=test_driver/test.o 
-IMPL_O=implementation/core.o implementation/core_only_structure.o implementation/core_only_multi_threading.o implementation/core_only_caching.o implementation/queries.o implementation/cache.o implementation/distance.o
+IMPL_O=implementation/core.o implementation/queries.o implementation/cache.o implementation/distance.o implementation/cwrapper.o
 
 # Compiler flags
 CC  = gcc
-CXX = g++ -std=c++11
+CXX = g++
 CFLAGS=-O3 -fPIC -Wall -g -I. -I./include
 CXXFLAGS=$(CFLAGS)
 LDFLAGS=-lpthread
@@ -24,15 +24,6 @@ lib: $(IMPL_O)
 testdriver: lib $(TEST_O)
 	$(CXX) $(CXXFLAGS) -o testdriver $(TEST_O) ./lib$(LIBRARY).so
 
-core_only_caching: implementation/core_only_caching.o $(filter-out implementation/core.o, $(IMPL_O))
-	$(CXX) $(CXXFLAGS) -o core_only_caching implementation/core_only_caching.o $(filter-out implementation/core.o, $(IMPL_O)) ./lib$(LIBRARY).so
-
-core_only_structure: implementation/core_only_structure.o $(filter-out implementation/core.o, $(IMPL_O))
-	$(CXX) $(CXXFLAGS) -o core_only_structure implementation/core_only_structure.o $(filter-out implementation/core.o, $(IMPL_O)) ./lib$(LIBRARY).so
-
-core_only_multi_threading: implementation/core_only_multi_threading.o $(filter-out implementation/core.o, $(IMPL_O))
-	$(CXX) $(CXXFLAGS) -o core_only_multi_threading implementation/core_only_multi_threading.o $(filter-out implementation/core.o, $(IMPL_O)) ./lib$(LIBRARY).so
-
 clean:
-	rm -f $(PROGRAMS) lib$(LIBRARY).so core_only_caching core_only_structure core_only_multi_threading
+	rm -f $(PROGRAMS) lib$(LIBRARY).so
 	find . -name '*.o' -print | xargs rm -f
