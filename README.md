@@ -55,13 +55,13 @@ Then, setup the python environment for the required libraries:
 make setup_python
 ```
 
-Make sure to update your python interpreter to the .venv path in your workspace:
-".../AWT-2024-2025/.venv/bin/python"
-
 For Visual Studio Code:
 
 Press `Ctrl+Shift+P`(Windows) or `Cmd+Shift+P`(Mac) to open the command palette.
 Search for "Python: Select Interpreter" and click on "Enter interpreter path...". And enter .venv path.
+
+Make sure to update your python interpreter to the .venv path in your workspace:
+".../AWT-2024-2025/.venv/bin/python"
 
 Or select /.venv/bin/python path from the options
 
