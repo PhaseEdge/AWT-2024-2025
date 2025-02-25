@@ -1,4 +1,4 @@
-We as a group (Furkan, Efe, Utku) try to:
+We as a group (Furkan, Efe, Utku) tried to:
 
 Implement core API functions (StartQuery(), EndQuery(), MatchDocument(), GetNextAvailRes()) and create a test driver to validate them using sample data files.
 
@@ -8,22 +8,12 @@ Develop a data-parallel version using a framework like Apache Spark, Flink, or D
 
 Deliverables include the source code, test results, and reports detailing implementation, optimizations, and performance comparisons.
 
-## Contents
+// IMPORTANT NOTE
+core.cpp or powermetrics_output_core === multi threading + caching + better code structure for C++.
 
-Included are files and directories:
+Base output is inside python branch
 
-- README: This document
-- Makefile: Makefile to compile
-- include/: Header files
-- implementation/: Cpp files
-- old_implementations/: Contains our attempts and old implementations
-- test_driver/: Contains the test driver implementation. (Not used)
-- python/: Contains our python implementations
-- python/test.py: Contains our translated test driver in python
-- test_data/: Contatins the test data
-- results/: Created after running the benchmark, with each implementations' runtime
-- result.txt: Created after running the benchmark, with reference solution's runtime
-- benchmark.py: Main python file to run the test
+For the main branch, speeds stated in the terminal are wrong. If you need exact runtimes switch to branches such as only_structure, only_caching etc.
 
 ## Minimum Requirements
 
@@ -35,6 +25,18 @@ Pip (For dependency installation)
 
 ## Testing Instructions
 
+To test the implementation, follow these steps:
+
+\*\* MAIN BRANCH -- C++ IMPLEMENTATIONS ALL TOGETHER
+
+```bash
+make clean
+make
+chmod +x run_profiling.sh            // You might need to be in the run_profiling.sh directory
+./run_profiling.sh
+```
+
+\*\* PYTHON_IMPLEMENTATION BRANCH -- PYTHON IMPLEMENTATIONS + BASE PROJECT
 To test the implementation, follow these steps:
 
 ```bash
@@ -57,16 +59,17 @@ Search for "Python: Select Interpreter" and click on "Enter interpreter path..."
 
 Close and Reopen Visual Studio Code if necessary
 
-Start the speed test using:
+Start the test using:
 
 ```bash
 python benchmark.py
 ```
 
-This will run the given reference solution and all of our implementations, then plot their throughputs as bar and point graphs.
-
-To clean the virtual environment and compiled c files:
+\*\* C BRANCHES -- SINGLE C++ BRANCHES SUCH AS C_ONLY_STRUCTURE, C_ONLY_CACHING ...
 
 ```bash
 make clean
+make
+chmod +x profiling.sh            // You might need to be in the profiling.sh directory
+./profiling.sh
 ```
