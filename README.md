@@ -8,6 +8,8 @@ Develop a data-parallel version using a framework like Apache Spark, Flink, or D
 
 Deliverables include the source code, test results, and reports detailing implementation, optimizations, and performance comparisons.
 
+There might be some errors on the terminal. Not important ones.
+
 // IMPORTANT NOTE
 core.cpp or powermetrics_output_core === multi threading + caching + better code structure for C++.
 
@@ -16,6 +18,8 @@ Base output is inside python branch
 For the main branch, speeds stated in the terminal are wrong. If you need exact runtimes switch to branches such as only_structure, only_caching etc.
 
 ## Minimum Requirements
+
+XCode for MacOS
 
 GCC/G++ (Version supporting C++17)
 
