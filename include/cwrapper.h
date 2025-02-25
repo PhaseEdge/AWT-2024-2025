@@ -3,19 +3,17 @@
 #include <sstream>
 #include <cache.h>
 #include <queries.h>
+#include <distance.h>
+#include <unordered_set>
 
 extern "C" {
 void* doc_str_to_doc_words(const char* doc_str);
-
-void* init_cache(void *document_words);
 
 void* init_ids();
 
 unsigned int queries_size(void *queries);
 
 void* query_by_index(void *queries, unsigned int index);
-
-bool match_query(void* queries, unsigned int index, void* document_words, void* cache);
 
 void add_ids(void* queries, unsigned int index, void* new_ids);
 
@@ -26,4 +24,19 @@ void start_query(void* queries, QueryID query_id, const char* query_str, MatchTy
 void end_query(void* queries, QueryID query_id);
 
 void* init_queries();
+
+bool match_query(void *queries, unsigned int index, void *document_words);
+
+bool matchQuery(const Query& query, const set<string>& document_words);
+
+void* initializeCache();
+
+void freeCache(void* cache);
+
+void *doc_str_to_doc_words_unorderedset(const char *doc_str);
+
+bool match_query_caching(void *queries, unsigned int index, void *document_words, void* cache);
+
+bool matchQuery_caching(const Query& query, const unordered_set<string>& document_words, void* cache);
+
 }

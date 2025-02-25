@@ -1,0 +1,4 @@
+Start Test ...
+Duration: 0:00:00.617018
+Throughput= 1557.4910688375908 documents/second
+Test finished
