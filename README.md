@@ -77,3 +77,10 @@ make
 chmod +x profiling.sh            // You might need to be in the profiling.sh directory
 ./profiling.sh
 ```
+
+\*\* Results Docs
+To see results check "powermetrics_output" files on the project.
+
+For MacOS search for "Combined Power". If there are more than one. Sum up all the values for the total.
+
+For Intel search for "derived package power". If there are more than one. Sum up all the values for the total.
