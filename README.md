@@ -10,6 +10,15 @@ Deliverables include the source code, test results, and reports detailing implem
 
 There might be some errors on the terminal. Not important ones.
 
+\*\* CLONE THE REPOSITORY VIA VSCODE
+
+1. In VSCode hit Cmd+Shift+P (MacOS) || Ctrl+Shift+P (Windows) type "git clone"
+2. You will see the "Git:Clone" option
+3. Select it
+4. Paste this address to clone it https://github.com/PhaseEdge/AWT-2024-2025.git
+
+(Address is public. We already tested it)
+
 // IMPORTANT NOTE
 core.cpp or powermetrics_output_core === multi threading + caching + better code structure for C++.
 
@@ -46,6 +55,7 @@ chmod +x run_profiling.sh            // You might need to be in the run_profilin
 To test the implementation, follow these steps:
 
 ```bash
+make clean
 make
 ```
 
@@ -66,6 +76,8 @@ Make sure to update your python interpreter to the .venv path in your workspace:
 Or select /.venv/bin/python path from the options
 
 Close and Reopen Visual Studio Code if necessary
+
+If necessary create a new terminal within VSCode. New Terminal will always have the new configurations.
 
 Start the test using:
 
